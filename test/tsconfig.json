@@ -1,0 +1,19 @@
+{
+  "extends": "../tsconfig.json",
+  "compilerOptions": {
+    "resolveJsonModule": true,
+
+    /* Basic Options */
+    "lib": [
+      "esnext"
+    ],
+
+    /* Module Resolution Options */
+    "types": [
+      "jest"
+    ]
+  },
+  "include": [
+    "**/*.ts",
+  ]
+}

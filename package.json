@@ -1,0 +1,47 @@
+{
+  "name": "@minofrk/msf-io-ts",
+  "version": "0.0.0",
+  "description": "Type utilities with io-ts for MSF format.",
+  "keywords": [
+    "io-ts",
+    "msf",
+    "xelto"
+  ],
+  "homepage": "https://github.com/minofrk/msf-io-ts",
+  "bugs": {
+    "url": "https://github.com/minofrk/msf-io-ts/issues"
+  },
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/minofrk/msf-io-ts.git"
+  },
+  "license": "MIT",
+  "author": "古城みの <minofrk@gmail.com>",
+  "files": [
+    "lib",
+    "esm",
+    "src"
+  ],
+  "main": "lib/index.js",
+  "module": "esm/index.js",
+  "types": "lib/index.d.ts",
+  "scripts": {
+    "build": "tsc && tsc -p tsconfig.esm.json",
+    "clean": "rimraf lib esm coverage",
+    "lint": "eslint src test --ext ts",
+    "test": "jest"
+  },
+  "dependencies": {
+    "io-ts": "^1.8.6"
+  },
+  "devDependencies": {
+    "@types/jest": "^24.0.13",
+    "@typescript-eslint/eslint-plugin": "^1.9.0",
+    "@typescript-eslint/parser": "^1.9.0",
+    "eslint": "^5.16.0",
+    "jest": "^24.8.0",
+    "rimraf": "^2.6.3",
+    "ts-jest": "^24.0.2",
+    "typescript": "~3.4.5"
+  }
+}
