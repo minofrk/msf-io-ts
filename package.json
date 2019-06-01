@@ -29,7 +29,7 @@
     "build": "tsc && tsc -p tsconfig.esm.json",
     "clean": "rimraf lib esm coverage",
     "lint": "eslint src test --ext ts",
-    "test": "jest"
+    "test": "tsc --noEmit && jest && npm run lint"
   },
   "dependencies": {
     "io-ts": "^1.8.6"
