@@ -36,11 +36,7 @@ export const Sorn = t.keyof({
 
 export const Teems = t.literal('tem');
 
-export const Piece = t.union([
-    Arxe,
-    Sorn,
-    Teems,
-]);
+export const Piece = t.union([Arxe, Sorn, Teems]);
 
 export const TurnablePiece = t.keyof({
     pal: null,

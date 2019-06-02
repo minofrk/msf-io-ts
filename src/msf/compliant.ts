@@ -5,12 +5,19 @@ import { NonRootNode } from './non-root-node';
 import { DeepReadonly } from '../deep-readonly';
 import { Variation } from './variation';
 
-function isSpecCompliantNonRootNodes(seslax: DeepReadonly<t.TypeOf<typeof NonRootNode>[]>): boolean {
-    // eslint-disable-next-line @typescript-eslint/no-use-before-define
-    return seslax.every((x): boolean => isSpecCompliantState(x.slax) && isSpecCompliantVariations(x.mit));
+function isSpecCompliantNonRootNodes(
+    seslax: DeepReadonly<t.TypeOf<typeof NonRootNode>[]>,
+): boolean {
+    return seslax.every(
+        (x): boolean =>
+            // eslint-disable-next-line @typescript-eslint/no-use-before-define
+            isSpecCompliantState(x.slax) && isSpecCompliantVariations(x.mit),
+    );
 }
 
-function isSpecCompliantVariations(mit: DeepReadonly<t.TypeOf<typeof Variation>[]>): boolean {
+function isSpecCompliantVariations(
+    mit: DeepReadonly<t.TypeOf<typeof Variation>[]>,
+): boolean {
     // eslint-disable-next-line @typescript-eslint/no-use-before-define
     return mit.every((x): boolean => isSpecCompliantNonRootNodes(x.seslax));
 }

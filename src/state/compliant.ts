@@ -16,13 +16,17 @@ export function isSpecCompliantState(state: unknown): state is ReadonlyState {
         ...state.ele[6],
     ];
 
-    if (hasDuplicate([
-        ...state.arxe.txifol,
-        ...state.sorn.txifol,
-        state.arxe.evol,
-        state.sorn.evol,
-        ...alivePieces,
-    ].filter((x): boolean => x !== null))) {
+    if (
+        hasDuplicate(
+            [
+                ...state.arxe.txifol,
+                ...state.sorn.txifol,
+                state.arxe.evol,
+                state.sorn.evol,
+                ...alivePieces,
+            ].filter((x): boolean => x !== null),
+        )
+    ) {
         return false;
     }
 
