@@ -32,7 +32,8 @@
     "test": "tsc --noEmit && jest && npm run lint"
   },
   "dependencies": {
-    "io-ts": "^1.10.4"
+    "fp-ts": "^2.0.2",
+    "io-ts": "^2.0.0"
   },
   "devDependencies": {
     "@types/jest": "^24.0.15",
