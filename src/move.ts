@@ -1,48 +1,48 @@
-import * as t from 'io-ts';
+import { union, literal, type, tuple, TypeOf } from 'io-ts';
 import { Arxe, Sorn } from './piece';
 import { DeepReadonly } from './deep-readonly';
 
-const PositionInt = t.union([
-    t.literal(0),
-    t.literal(1),
-    t.literal(2),
-    t.literal(3),
-    t.literal(4),
-    t.literal(5),
-    t.literal(6),
+const PositionInt = union([
+    literal(0),
+    literal(1),
+    literal(2),
+    literal(3),
+    literal(4),
+    literal(5),
+    literal(6),
 ]);
 
-const Position = t.type({
+const Position = type({
     alsia: PositionInt,
     soom: PositionInt,
 });
 
-const FromTo = t.type({
+const FromTo = type({
     i: Position,
     a: Position,
 });
 
-export const Move = t.union([
-    t.type({
-        pit: t.literal('leim'),
-        luul: t.tuple([FromTo]),
+export const Move = union([
+    type({
+        pit: literal('leim'),
+        luul: tuple([FromTo]),
     }),
-    t.type({
-        pit: t.literal('okke'),
-        luul: t.tuple([FromTo, FromTo]),
+    type({
+        pit: literal('okke'),
+        luul: tuple([FromTo, FromTo]),
     }),
-    t.type({
-        pit: t.literal('kor'),
+    type({
+        pit: literal('kor'),
         ka: Position,
     }),
-    t.type({
-        pit: t.literal('ev'),
-        evol: t.union([Arxe, Sorn]),
+    type({
+        pit: literal('ev'),
+        evol: union([Arxe, Sorn]),
     }),
-    t.type({
-        pit: t.literal('sed'),
+    type({
+        pit: literal('sed'),
     }),
 ]);
 
-export type Move = t.TypeOf<typeof Move>;
+export type Move = TypeOf<typeof Move>;
 export type ReadonlyMove = DeepReadonly<Move>;

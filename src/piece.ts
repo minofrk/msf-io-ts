@@ -1,6 +1,6 @@
-import * as t from 'io-ts';
+import { keyof, union, literal, TypeOf } from 'io-ts';
 
-export const Arxe = t.keyof({
+export const Arxe = keyof({
     dia: null,
     vio: null,
     lis: null,
@@ -17,7 +17,7 @@ export const Arxe = t.keyof({
     ser: null,
 });
 
-export const Sorn = t.keyof({
+export const Sorn = keyof({
     rav: null,
     tan: null,
     lin: null,
@@ -34,11 +34,11 @@ export const Sorn = t.keyof({
     mir: null,
 });
 
-export const Teems = t.literal('tem');
+export const Teems = literal('tem');
 
-export const Piece = t.union([Arxe, Sorn, Teems]);
+export const Piece = union([Arxe, Sorn, Teems]);
 
-export const TurnablePiece = t.keyof({
+export const TurnablePiece = keyof({
     pal: null,
     ful: null,
     mik: null,
@@ -56,8 +56,8 @@ export const TurnablePiece = t.keyof({
     tem: null,
 });
 
-export type Arxe = t.TypeOf<typeof Arxe>;
-export type Sorn = t.TypeOf<typeof Sorn>;
-export type Teems = t.TypeOf<typeof Teems>;
-export type Piece = t.TypeOf<typeof Piece>;
-export type TurnablePiece = t.TypeOf<typeof TurnablePiece>;
+export type Arxe = TypeOf<typeof Arxe>;
+export type Sorn = TypeOf<typeof Sorn>;
+export type Teems = TypeOf<typeof Teems>;
+export type Piece = TypeOf<typeof Piece>;
+export type TurnablePiece = TypeOf<typeof TurnablePiece>;

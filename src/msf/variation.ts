@@ -1,23 +1,23 @@
-import * as t from 'io-ts';
+import { type, array, recursion, Type, TypeOf, OutputOf } from 'io-ts';
 import { Result } from './result';
 import { NonRootNode } from './non-root-node';
 
-type Codec = t.Type<
+type Codec = Type<
     {
-        fixt: t.TypeOf<typeof Result>;
-        seslax: t.TypeOf<typeof NonRootNode>[];
+        fixt: TypeOf<typeof Result>;
+        seslax: TypeOf<typeof NonRootNode>[];
     },
     {
-        fixt: t.OutputOf<typeof Result>;
-        seslax: t.OutputOf<typeof NonRootNode>[];
+        fixt: OutputOf<typeof Result>;
+        seslax: OutputOf<typeof NonRootNode>[];
     }
 >;
 
-export const Variation: Codec = t.recursion(
+export const Variation: Codec = recursion(
     'Variation',
     (): Codec =>
-        t.type({
+        type({
             fixt: Result,
-            seslax: t.array(NonRootNode),
+            seslax: array(NonRootNode),
         }),
 );

@@ -1,22 +1,22 @@
-import * as t from 'io-ts';
+import { type, array, union, null as tNull, TypeOf } from 'io-ts';
 import { Player } from '../player';
 import { Sorn, Arxe, Piece, TurnablePiece } from '../piece';
 import { septuple } from './septuple';
 import { DeepReadonly } from '../deep-readonly';
 
-export const State = t.type({
+export const State = type({
     sast: Player,
-    arxe: t.type({
-        txifol: t.array(Sorn),
-        evol: t.union([t.null, Sorn]),
+    arxe: type({
+        txifol: array(Sorn),
+        evol: union([tNull, Sorn]),
     }),
-    sorn: t.type({
-        txifol: t.array(Arxe),
-        evol: t.union([t.null, Arxe]),
+    sorn: type({
+        txifol: array(Arxe),
+        evol: union([tNull, Arxe]),
     }),
-    ele: septuple(septuple(t.union([t.null, Piece]))),
-    korol: t.array(TurnablePiece),
+    ele: septuple(septuple(union([tNull, Piece]))),
+    korol: array(TurnablePiece),
 });
 
-export type State = t.TypeOf<typeof State>;
+export type State = TypeOf<typeof State>;
 export type ReadonlyState = DeepReadonly<State>;

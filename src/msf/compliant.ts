@@ -1,4 +1,4 @@
-import * as t from 'io-ts';
+import { TypeOf } from 'io-ts';
 import { MSFType, ReadonlyMSFType } from './codec';
 import { isSpecCompliantState } from '../state/compliant';
 import { NonRootNode } from './non-root-node';
@@ -6,7 +6,7 @@ import { DeepReadonly } from '../deep-readonly';
 import { Variation } from './variation';
 
 function isSpecCompliantNonRootNodes(
-    seslax: DeepReadonly<t.TypeOf<typeof NonRootNode>[]>,
+    seslax: DeepReadonly<TypeOf<typeof NonRootNode>[]>,
 ): boolean {
     return seslax.every(
         (x): boolean =>
@@ -16,7 +16,7 @@ function isSpecCompliantNonRootNodes(
 }
 
 function isSpecCompliantVariations(
-    mit: DeepReadonly<t.TypeOf<typeof Variation>[]>,
+    mit: DeepReadonly<TypeOf<typeof Variation>[]>,
 ): boolean {
     // eslint-disable-next-line @typescript-eslint/no-use-before-define
     return mit.every((x): boolean => isSpecCompliantNonRootNodes(x.seslax));

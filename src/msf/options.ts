@@ -1,7 +1,7 @@
-import * as t from 'io-ts';
+import { partial, string as tString } from 'io-ts';
 import { DateTimeString } from './date-time-string';
 
-export const Options = t.partial({
+export const Options = partial({
     im: DateTimeString,
-    oprens: t.string,
+    oprens: tString,
 });

@@ -1,27 +1,27 @@
-import * as t from 'io-ts';
+import { type, union, literal, intersection } from 'io-ts';
 import { Options } from './options';
 import { Player } from '../player';
 
-export const Result = t.intersection([
+export const Result = intersection([
     Options,
-    t.union([
-        t.type({
-            pit: t.union([t.literal('xeltsoldes'), t.literal('teomsast')]),
+    union([
+        type({
+            pit: union([literal('xeltsoldes'), literal('teomsast')]),
             vastan: Player,
         }),
-        t.type({
-            pit: t.literal('artansoldes'),
+        type({
+            pit: literal('artansoldes'),
             vastan: Player,
-            ito: t.union([
-                t.literal(0),
-                t.literal(1),
-                t.literal(2),
-                t.literal(3),
-                t.literal(4),
+            ito: union([
+                literal(0),
+                literal(1),
+                literal(2),
+                literal(3),
+                literal(4),
             ]),
         }),
-        t.type({
-            pit: t.literal('daim'),
+        type({
+            pit: literal('daim'),
         }),
     ]),
 ]);

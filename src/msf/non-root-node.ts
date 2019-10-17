@@ -1,31 +1,39 @@
-import * as t from 'io-ts';
+import {
+    type,
+    array,
+    recursion,
+    intersection,
+    Type,
+    TypeOf,
+    OutputOf,
+} from 'io-ts';
 import { Variation } from './variation';
 import { Options } from './options';
 import { Move } from '../move';
 import { State } from '../state';
 
-type Codec = t.Type<
-    t.TypeOf<typeof Options> & {
-        ov: t.TypeOf<typeof Move>;
-        slax: t.TypeOf<typeof State>;
-        mit: t.TypeOf<typeof Variation>[];
+type Codec = Type<
+    TypeOf<typeof Options> & {
+        ov: TypeOf<typeof Move>;
+        slax: TypeOf<typeof State>;
+        mit: TypeOf<typeof Variation>[];
     },
-    t.OutputOf<typeof Options> & {
-        ov: t.OutputOf<typeof Move>;
-        slax: t.OutputOf<typeof State>;
-        mit: t.OutputOf<typeof Variation>[];
+    OutputOf<typeof Options> & {
+        ov: OutputOf<typeof Move>;
+        slax: OutputOf<typeof State>;
+        mit: OutputOf<typeof Variation>[];
     }
 >;
 
-export const NonRootNode: Codec = t.recursion(
+export const NonRootNode: Codec = recursion(
     'NonRootNode',
     (): Codec =>
-        t.intersection([
+        intersection([
             Options,
-            t.type({
+            type({
                 ov: Move,
                 slax: State,
-                mit: t.array(Variation),
+                mit: array(Variation),
             }),
         ]),
 );

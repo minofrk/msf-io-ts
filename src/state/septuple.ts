@@ -1,12 +1,12 @@
-import * as t from 'io-ts';
+import { tuple, Type, TypeOf, OutputOf, Mixed } from 'io-ts';
 
 export type Septuple<T> = [T, T, T, T, T, T, T];
 export type ReadonlySeptuple<T> = readonly [T, T, T, T, T, T, T];
 
-export function septuple<CS extends t.Mixed>(
+export function septuple<CS extends Mixed>(
     codec: CS,
-): t.Type<Septuple<t.TypeOf<CS>>, Septuple<t.OutputOf<CS>>> {
-    return t.tuple([
+): Type<Septuple<TypeOf<CS>>, Septuple<OutputOf<CS>>> {
+    return tuple([
         codec,
         codec,
         codec,
@@ -17,10 +17,10 @@ export function septuple<CS extends t.Mixed>(
     ] as any) as any; // eslint-disable-line @typescript-eslint/no-explicit-any
 }
 
-export function readonlySeptuple<CS extends t.Mixed>(
+export function readonlySeptuple<CS extends Mixed>(
     codec: CS,
-): t.Type<ReadonlySeptuple<t.TypeOf<CS>>, ReadonlySeptuple<t.OutputOf<CS>>> {
-    return t.tuple([
+): Type<ReadonlySeptuple<TypeOf<CS>>, ReadonlySeptuple<OutputOf<CS>>> {
+    return tuple([
         codec,
         codec,
         codec,

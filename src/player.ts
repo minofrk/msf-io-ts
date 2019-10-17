@@ -1,5 +1,5 @@
-import * as t from 'io-ts';
+import { union, literal, TypeOf } from 'io-ts';
 
-export const Player = t.union([t.literal('arxe'), t.literal('sorn')]);
+export const Player = union([literal('arxe'), literal('sorn')]);
 
-export type Player = t.TypeOf<typeof Player>;
+export type Player = TypeOf<typeof Player>;
