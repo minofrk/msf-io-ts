@@ -1,13 +1,10 @@
-sudo: false
-
 language: node_js
 
 node_js:
   - node
 
-install:
-  - npm ci
-  - npm install -g codecov
+before_script:
+  - npm install codecov
 
 after_success:
   - codecov
