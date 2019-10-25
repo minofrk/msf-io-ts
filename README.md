@@ -6,10 +6,6 @@
 [![Build Status](https://img.shields.io/travis/com/minofrk/msf-io-ts/master.svg?style=flat-square)](https://travis-ci.com/minofrk/msf-io-ts)
 [![codecov](https://img.shields.io/codecov/c/github/minofrk/msf-io-ts.svg?style=flat-square)](https://codecov.io/gh/minofrk/msf-io-ts)
 
-```
-npm install @minofrk/msf-io-ts
-```
-
 [MSF 形式](https://github.com/minofrk/mino-seslax-format)を TypeScript で取り扱う上で有用そうな型を [io-ts](https://github.com/gcanti/io-ts) のコーデックとして用意しています。
 
 ```typescript
@@ -27,6 +23,19 @@ const move: Move = something;
 ```
 
 その他、有用そうな型エイリアスと関数も用意されています（下記参照）
+
+Install
+-------------------------------------------------------------------------------
+
+```
+npm install @minofrk/msf-io-ts
+```
+
+加えて [io-ts](https://github.com/gcanti/io-ts) と [fp-ts](https://github.com/gcanti/fp-ts) もインストールします（既にあれば不要です）
+
+```
+npm install io-ts fp-ts
+```
 
 Codecs
 -------------------------------------------------------------------------------
