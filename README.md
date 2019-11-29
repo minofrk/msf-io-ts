@@ -44,6 +44,11 @@ Codecs
 
 - `State`
 - `Move`
+    - `LeimMove`
+    - `OkkeMove`
+    - `KorMove`
+    - `EvMove`
+    - `SedMove`
 - `MSFType`
 
 ### 駒
@@ -59,6 +64,9 @@ Codecs
 - `FalaType` ... 0 以上 2147483647 以下の整数
 - `DateTimeString` ... RFC 3339 に準拠した文字列
 - `Player`
+- `Coordinate` ... 0 以上 6 以下の整数
+- `Position`
+- `FromTo`
 
 Type aliases
 -------------------------------------------------------------------------------
@@ -69,7 +77,14 @@ Type aliases
 
 - `ReadonlyState`
 - `ReadonlyMove`
+    - `ReadonlyLeimMove`
+    - `ReadonlyOkkeMove`
+    - `ReadonlyKorMove`
+    - `ReadonlyEvMove`
+    - `ReadonlySedMove`
 - `ReadonlyMSFType`
+- `ReadonlyPosition`
+- `ReadonlyFromTo`
 
 Strict validators
 -------------------------------------------------------------------------------
