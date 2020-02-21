@@ -38,7 +38,7 @@
     "eslint": "^6.8.0",
     "eslint-config-prettier": "^6.10.0",
     "eslint-plugin-prettier": "^3.1.2",
-    "fp-ts": "^2.5.0",
+    "fp-ts": "^2.5.1",
     "io-ts": "^2.1.1",
     "jest": "^24.9.0",
     "prettier": "^1.19.1",
