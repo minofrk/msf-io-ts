@@ -39,7 +39,7 @@
     "eslint-config-prettier": "^6.15.0",
     "eslint-plugin-prettier": "^3.3.1",
     "fp-ts": "^2.9.5",
-    "io-ts": "^2.2.14",
+    "io-ts": "^2.2.15",
     "jest": "^24.9.0",
     "prettier": "^1.19.1",
     "rimraf": "^3.0.2",
@@ -47,6 +47,6 @@
     "typescript": "~3.9.9"
   },
   "peerDependencies": {
-    "io-ts": "^2.2.14"
+    "io-ts": "^2.2.15"
   }
 }
